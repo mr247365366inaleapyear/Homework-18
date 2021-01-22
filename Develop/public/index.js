@@ -143,14 +143,17 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     });
 }
-
-document.querySelector("#add-btn").onclick = function () {
+//added event listener instead of on click to get a functioning event
+document.querySelector("#add-btn").addEventListener("click", function(event) {
+  event.preventDefault();
   sendTransaction(true);
-};
+});
 
-document.querySelector("#sub-btn").onclick = function () {
+document.querySelector("#sub-btn").addEventListener("click", function(event) {
+  event.preventDefault();
   sendTransaction(false);
-};
-document.querySelector("#del-btn").onclick = function () {
-  sendTransaction(true);
-};
+});
+document.querySelector("#del-btn").addEventListener("click", function(event) {
+  event.preventDefault();
+  deletePending();
+});
