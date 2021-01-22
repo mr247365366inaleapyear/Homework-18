@@ -143,7 +143,7 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     });
 }
-//added event listener instead of on click to get a functioning event
+//added 'add event listener' instead of 'onclick' to get a functioning event
 document.querySelector("#add-btn").addEventListener("click", function(event) {
   event.preventDefault();
   sendTransaction(true);
