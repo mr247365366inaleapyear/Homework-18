@@ -143,17 +143,11 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     });
 }
-//added 'add event listener' instead of 'onclick' to get a functioning event
-document.querySelector("#add-btn").addEventListener("click", function(event) {
-  event.preventDefault();
-  sendTransaction(true);
-});
 
-document.querySelector("#sub-btn").addEventListener("click", function(event) {
-  event.preventDefault();
+document.querySelector("#add-btn").onclick = function () {
+  sendTransaction(true);
+};
+
+document.querySelector("#sub-btn").onclick = function () {
   sendTransaction(false);
-});
-document.querySelector("#del-btn").addEventListener("click", function(event) {
-  event.preventDefault();
-  deletePending();
-});
+};
